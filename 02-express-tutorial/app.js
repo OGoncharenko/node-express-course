@@ -46,6 +46,6 @@ app.get('/api/v1/query', (req, res) => {
     res.status(200).json(sortedProducts)
 })
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('server is listening on port 3000...')
 })
