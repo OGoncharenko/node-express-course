@@ -1,0 +1,15 @@
+{
+  "name": "asd",
+  "version": "1.0.0",
+  "main": "01-intro.js",
+  "scripts": {
+    "dev": "nodemon prompter.js",
+    "start": "node prompter.js"
+  },
+  "author": "Olga",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
