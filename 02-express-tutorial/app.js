@@ -9,6 +9,6 @@ app.use(express.urlencoded({extended: false}))
 app.use('/api/people', peopleRouter)
 
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('server is listening on port 3000...')
 })
