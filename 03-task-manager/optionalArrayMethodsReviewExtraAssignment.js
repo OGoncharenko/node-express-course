@@ -157,6 +157,58 @@ const names = [
   'Amy You'
 ];
 
+// - Create a new array with only each person's last name
+const lastNamesOnly = names.map((name) => {
+  const eachWordSeparated = name.split(" ")
+  const lastName = eachWordSeparated.pop();
+  return lastName;
+})
+console.log('lastNamesOnly', lastNamesOnly);
+
+// - Filter names that don't match the format "<first> <last>"
+const correctFormat = /^\w+ \w+$/;
+const sortedNames = names.filter((name) => {
+  return name.match(correctFormat);
+})
+console.log('sortedNames', sortedNames)
+
+// - Create a new array where everyone's name is converted to "Title Case"
+//   - The first character of each word should be uppercase
+//   - All other characters in the word should be lowercase
+//   - expected output is ['Dimitry Santiago', 'Carlos D. Perez', 'Tam Person', ...]
+const titleCaseNames = names.map((name) => {
+  const eachNameSeparated = name.split(" ");
+  const lowerUpperChar = eachNameSeparated.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }
+  ).join(" ");
+  return lowerUpperChar;
+})
+console.log('titleCaseNames', titleCaseNames);
+
+//     Remove names with the wrong format
+//     AND change it to "Title Case"
+//     AND remove people whose last name ends with z
+//     AND write a message asking them to sign up
+const result = names.filter((name) => name.match(correctFormat))
+  .map((name) => {
+    const eachNameSeparated = name.split(" ");
+    const lowerUpperChar = eachNameSeparated.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    ).join(" ");
+    return lowerUpperChar;
+  })
+  .filter((name) => {
+    const lastLetter = name.slice(-1);
+    return lastLetter.toLowerCase() !== 'z';
+  }
+  )
+  .map((name) => {
+    return `Please sign up`;
+  })
+console.log('result', result);
+
 ///////////////////////////////////////////////////////////////////////////////
 //// put your answers above if you wish to do the challenges on your own //////
 ///////////////////////////////////////////////////////////////////////////////
